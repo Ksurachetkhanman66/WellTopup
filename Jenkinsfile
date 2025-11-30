@@ -61,7 +61,7 @@ EOF
                     
                     echo "🐳 Building Docker Images..."
                     // ย้ายการ Build มาไว้ใน Stage นี้ตามที่คุณขอ
-                    sh 'docker compose build'
+                    sh 'docker compose build --no-cache'
                 }
             }
         }
