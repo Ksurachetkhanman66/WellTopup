@@ -61,7 +61,7 @@ EOF
                     
                     echo "🐳 Building Docker Images..."
                     // ย้ายการ Build มาไว้ใน Stage นี้ตามที่คุณขอ
-                    sh 'docker compose build --no-cache'
+                    sh 'docker compose build'
                 }
             }
         }
@@ -91,7 +91,7 @@ EOF
             steps {
                 script {
                     echo "🏥 Waiting for services..."
-                    sh 'sleep 20' // รอ MySQL บูตเสร็จ
+                    sh 'sleep 60' // รอ MySQL บูตเสร็จ
 
                     echo "🔍 Checking API Status..."
                     sh 'docker compose ps'
