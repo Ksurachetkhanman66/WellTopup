@@ -90,15 +90,20 @@ EOF
         stage('Health Check') {
             steps {
                 script {
-                    echo "🏥 Waiting for services..."
-                    sh 'sleep 60' // รอ MySQL บูตเสร็จ
-
+                    echo "🏥 Waiting for services to initialize..."
+                    
+                    // ✅ ใช้คำสั่งนี้แทน sleep:
+                    // "รอสูงสุด 180 วินาที (3 นาที), เช็คทุกๆ 10 วินาที จนกว่าเว็บจะตอบ 200 OK"
+                    sh """
+                        timeout 180 bash -c 'until curl -s -f http://localhost:3001/api/games > /dev/null; do 
+                            echo "⏳ Database is initializing... waiting 10s"
+                            sleep 10
+                        done'
+                    """
+                    
                     echo "🔍 Checking API Status..."
                     sh 'docker compose ps'
-
-                    // ✅ แก้ตรงนี้: เช็ค API เกมของเรา (ห้ามใช้ attractions)
-                    sh "curl -f http://localhost:3001/api/games || exit 1"
-
+                    
                     echo "✅ Health Check Passed!"
                 }
             }
