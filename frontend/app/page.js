@@ -7,7 +7,7 @@ const banners = [
   { id: 1, img: "https://digicodes.net/wp-content/uploads/2020/03/digital-top-up-home-banner.jpg", title: "โปรโมชั่นต้อนรับสมาชิกใหม่" },
   { id: 2, img: "https://cdn-webth.garenanow.com/webth/cdn/rov/non-events/official/20250627/cb2232b1-eea8-4a9b-818c-702c299dd8f7.jpg", title: "RoV เติมคุ้มรับสกินฟรี" },
   { id: 3, img: "https://techissuestoday.com/wp-content/uploads/2024/08/valorant-night-market.webp", title: "Valorant Night Market มาแล้ว!" },
-  { id: 4, img: "https://techissuestoday.com/wp-content/uploads/2024/08/valorant-night-market.webp", title: "Valorant Night Market มาแล้ว!" },
+  { id: 4, img: "https://genshin-countdown.gengamer.in/wp-content/uploads/69131345e72e550ad16be02btfdTcOkZ03-1.webp", title: "GenshinImpact ส่วนลด 30%!" },
 ];
 
 export default function Page() {
