@@ -5,7 +5,7 @@ services:
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: dit312_6601977  # ✅ ชื่อ DB ตามรหัสนักศึกษา
+      MYSQL_DATABASE: dit312_6601977  
       MYSQL_USER: topup_user
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       TZ: Asia/Bangkok
